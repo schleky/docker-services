@@ -1,0 +1,25 @@
+services:
+    crafty:
+        container_name: crafty
+        image: registry.gitlab.com/crafty-controller/crafty-4:latest
+        restart: always
+        environment:
+            - TZ=${TZ}
+        ports:
+            - "8443:8443" # HTTPS
+            # - "8123:8123" # DYNMAP Uncomment if needed
+            - "19132:19132/udp" # BEDROCK
+            - "25500-25600:25500-25600" # MC SERV PORT RANGE
+        volumes:
+            - /opt/stacks/crafty/backups:/crafty/backups
+            - /opt/stacks/crafty/logs:/crafty/logs
+            - /opt/stacks/crafty/servers:/crafty/servers
+            - /opt/stacks/crafty/config:/crafty/app/config
+            - /opt/stacks/crafty/import:/crafty/import
+        networks:
+            - ${CRAFTY_NETWORK}
+
+networks:
+  ${CRAFTY_NETWORK}:
+    name: ${CRAFTY_NETWORK}
+    driver: bridge
