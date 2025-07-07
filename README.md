@@ -7,5 +7,3 @@ Each service stack (e.g., web, database, monitoring, Tailscale) is self-containe
 Configuration files are version-controlled via GitHub and edited using Visual Studio Code, Textastic (iOS), and Working Copy. Servers clone this repo into `/opt/stacks` and deploy only the stacks they need, using `.env` files to customize settings per environment.
 
 ---
-
-
