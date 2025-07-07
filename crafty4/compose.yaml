@@ -16,3 +16,4 @@ services:
             - /opt/stacks/crafty/servers:/crafty/servers
             - /opt/stacks/crafty/config:/crafty/app/config
             - /opt/stacks/crafty/import:/crafty/import
+        env_file: .env
