@@ -1,0 +1,9 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: cloudflare
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    env_file: .env
