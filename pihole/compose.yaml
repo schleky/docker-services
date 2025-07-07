@@ -13,7 +13,7 @@ services:
       FTLCONF_webserver_api_password: ${WEBPASSWORD}
       FTLCONF_dns_listeningMode: all
     volumes:
-      - 'opts/stacks/pihole:/etc/pihole'
+      - 'opt/stacks/pihole:/etc/pihole'
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
